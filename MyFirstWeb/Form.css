@@ -1,0 +1,803 @@
+/*Login css*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border_box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    transition: all .3s linear;
+    text-transform: capitalize;
+} body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(Black\ Restaurant\ Sushi\ Menu\ Trifold\ Brochure\ \ \(Presentation\).png) no-repeat;
+    background-size: cover;
+    
+}
+.Logo-login{
+    
+    background: url(2.png);
+    position: absolute;
+    height: 625px;
+    left: -100px;
+    width: 625px;
+    top: -50px;
+    pointer-events: none;
+    cursor: default;
+}
+img{  
+    max-width: 100%;
+    max-height: 100%;
+}
+.whole-login{
+    width: 420px;
+    background: transparent;
+    color: burlywood;
+    border-radius: 20px;
+    padding: 30px 40px;
+    
+}
+.whole-login h1{
+    font-size: 36px;
+    text-align: center;
+}
+.whole-login .input-box-login{
+    width: 100%;
+    height: 35px;
+    position: relative;
+    margin: 30px 0;
+}
+.input-box-login input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    font-size: 16px;
+    color: burlywood;
+    
+}
+.input-box-login input::placeholder{
+    color: burlywood;
+}
+.input-box-login i{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+.whole-login .remember-forgot-login{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+    margin: -15px 0 15px;
+    color: burlywood;
+}
+.whole-login .btn-login{
+    width: 100%;
+    height: 40px;
+    background: rgb(56, 4, 4);
+    border: none;
+    border-radius: 40px;
+    color: burlywood;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+}
+.whole-login .register-link-login{
+    font-size: 15px;
+    text-align: center;
+    margin-top: 20px;
+}
+.register-link-login p {
+    color: burlywood;
+    text-decoration: none;
+    font-weight: 900;
+}
+.register-link-login a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: 900;
+}
+.whole-login .Back-home-Login{
+    font-size: 15px;
+    text-align: center;
+    margin-top: 20px;
+}
+.whole-login .Back-home-Login a{
+    color: burlywood;
+    font-weight: 900;
+    text-decoration: none;
+}
+
+.register-link-login p a:hover{
+text-decoration: underline;
+}
+.remember-forgot-login a{
+    color: burlywood;
+    
+}
+footer{
+    text-align: center;
+    font-weight: 500;
+    color: burlywood;
+}
+footer a{
+    color: rgba(40, 209, 239, 0.611);
+}
+/*Registration css*/
+ body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: seagreen;
+    background: url(Black\ Restaurant\ Sushi\ Menu\ Trifold\ Brochure\ \ \(Presentation\).png) no-repeat;
+    background-size: cover;
+}
+.Logo-reg{
+    
+    background: url(2.png);
+    position: absolute;
+    height: 625px;
+    left: -100px;
+    width: 625px;
+    top: -50px;
+    pointer-events: none;
+    cursor: default;
+}
+img{  
+    max-width: 100%;
+    max-height: 100%;
+}
+.whole-reg{
+    width: 420px;
+    background: transparent;
+    color: burlywood;
+    border-radius: 20px;
+    padding: 30px 40px;
+    
+}
+.whole-reg h1{
+    font-size: 36px;
+    text-align: center;
+}
+.whole-reg .input-box-reg{
+    width: 100%;
+    height: 35px;
+    position: relative;
+    margin: 30px 0;
+}
+.input-box-reg input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    font-size: 16px;
+    color: burlywood;
+    
+}
+.input-box-reg input::placeholder{
+    color: burlywood;
+}
+.input-box-reg i{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+.whole-reg .Select-Gender-reg{
+    display: flex;
+    justify-content: flex-start;
+    font-size: 14.5px;
+    margin: 5px;
+    color: burlywood;
+    font-weight: 900;
+    top: -110px;
+    position: relative;
+    
+}
+.whole-reg .btn-reg{
+    width: 100%;
+    height: 40px;
+    background: rgb(56, 4, 4);
+    border: none;
+    border-radius: 40px;
+    color: burlywood;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+}
+.whole-reg .register-link-reg{
+    font-size: 15px;
+    text-align: center;
+    margin-top: 20px;
+}
+.register-link-reg p {
+    color: burlywood;
+    text-decoration: none;
+    font-weight: 900;
+}
+.register-link-reg a{
+    color: burlywood;
+    text-decoration: none;
+    font-weight: 900;
+}
+.register-link-reg p a:hover{
+text-decoration: underline;
+}
+.Select-Gender-reg a{
+    color: burlywood;
+    
+}
+.whole-reg .terms-reg{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+    margin: 65px 0 -140px;
+    position: relative;
+    bottom: 40px;
+    right: -170px;
+}
+.whole-reg p{
+    margin: 15px 0 25px;
+    font-weight: 600;
+    
+}
+.whole-reg .Reg-pass-reg {
+    width: 75%;
+    height: 35px;
+    position: relative;
+    padding-left: 65px;
+    padding-top: 10px;
+    margin: 40px;
+    margin-top: -35px;
+}
+.Reg-pass-reg input{
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        border: none;
+        border: 2px solid rgba(255, 255, 255, .2);
+        border-radius: 40px;
+        font-size: 16px;
+        color: burlywood;
+}
+.Reg-pass-reg input::placeholder{
+    color: burlywood;
+}
+.Age-reg input{
+    box-sizing: border-box;
+    position: relative;
+    width: 100px;
+        height: 20px;
+        background: transparent;
+        border: none;
+        outline: none;
+        border: 2px solid rgba(255, 255, 255, .2);
+        border-radius: 40px;
+        font-size: 12px;
+        color: burlywood;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background: transparent;
+    bottom: 0;
+    color: transparent;
+    cursor: pointer;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+}
+.label-reg{
+    position: relative;
+    top: -120px;
+    font-weight: 900;
+    left: 0px;
+}
+/*Homepage css*/
+header{
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+
+}.homepage-nav nav{
+    height: 100vh;
+    width: 70vw;
+    min-width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: auto;
+}
+.homepage-nav a{
+    position: relative;
+    text-decoration: none;
+    font-family: 'Poppins',sans-serif;
+    color: burlywood;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    padding: 0 100px;
+    top: 40px;
+}
+.homepage-nav a:after{
+    content: "";
+    position: absolute;
+    background-color: #7d1e1e;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
+}
+.homepage-nav a:hover{
+    color: burlywood;
+    font-weight: 500;
+}
+.homepage-nav a:hover:after{
+    width: 100%;
+}
+ body{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: var(--clr-neon);
+    background: url(Black\ Restaurant\ Sushi\ Menu\ Trifold\ Brochure\ \ \(Presentation\).png) no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    
+}
+.Logo-home{
+    
+    background: url(2.png);
+    position: absolute;
+    height: 625px;
+    left: 250px;
+    width: 625px;
+    top: 100px;
+    pointer-events: none;
+    cursor: default;
+}
+.textbox{
+    position: absolute;
+    max-width: 600px;
+    align-items: center;
+    top: 150px;
+    left: 150px;
+}
+.textbox h2{
+    color: burlywood;
+    font-size: 4em;
+    line-height: 1.4em;
+    font-weight: 500;
+}
+.textbox h2 span{
+    color: orangered;
+    font-size: 1.2em;
+    font-weight: 900;
+    
+}
+.textbox p{
+    color: burlywood;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.6em;
+}
+
+ 
+ 
+@media (max-width:991px){
+ 
+    html{
+       font-size: 55%;
+    }
+ 
+ }
+ 
+ @media (max-width:768px){
+ 
+    .products-preview .preview img{
+       height: 25rem;
+    }
+ 
+ }
+ 
+ @media (max-width:450px){
+ 
+    html{
+       font-size: 50%;
+    }
+ 
+ }
+footer{
+    background-color: #1c1c1c;
+    width: 1500px;
+    height: 200px;
+}
+.footerContainer{
+    width: 100%;
+    padding: 70px 30px 20px ;
+}
+.socialIcons{
+    display: flex;
+    justify-content: center;
+}
+.socialIcons a{
+    text-decoration: none;
+    padding:  10px;
+    background-color: burlywood;
+    margin: 10px;
+    border-radius: 50%;
+}
+.socialIcons a i{
+    font-size: 2em;
+    color: black;
+    opacity: 0,9;
+}
+.socialIcons a:hover{
+    background-color: #111;
+    transition: 0.5s;
+}
+.socialIcons a:hover i{
+    color: burlywood;
+    transition: 0.5s;
+}
+.footerNav{
+    margin: 30px 0;
+}
+.footerNav ul{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+.footerNav ul li a{
+    color:white;
+    margin: 20px;
+    text-decoration: none;
+    font-size: 1.3em;
+    opacity: 0.7;
+    transition: 0.5s;
+
+}
+.footerNav ul li a:hover{
+    opacity: 1;
+}
+.designer{
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin: 0px 5px;
+}
+@media (max-width: 700px){
+    .footerNav ul{
+        flex-direction: column;
+    } 
+    .footerNav ul li{
+        width:100%;
+        text-align: center;
+        margin: 10px;
+    }
+    .socialIcons a{
+        padding: 8px;
+        margin: 4px;
+    }
+}
+/*Menu*/
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600&display=swap');
+
+html{
+   font-size: 62.5%;
+   overflow-x: hidden;
+   
+}
+html::-webkit-scrollbar{
+    display: none;
+}
+
+body.menu-body{
+
+    background: url(Menu\ BG.png);
+}
+#searchBar {
+    position: fixed;
+    right: 20px;
+    width: 200px;
+    padding: 10px;
+    margin: 20px auto;
+    border-radius: 10px;
+    border: 1px solid burlywood;
+    background: #222;
+    color: burlywood;
+    font-size: 1.2em;
+}
+#searchBar::placeholder {
+    color: rgba(222, 184, 135, 0.7);
+}
+
+.container{
+   max-width: 1200px;
+   margin:0 auto    ;
+   padding:3rem 2rem;
+   transition: transform .5s;
+}
+
+
+.container .title{
+   font-size: 3.5rem;
+   margin-bottom: 3rem;
+   text-transform: uppercase;
+   text-align: center;
+   color: burlywood;
+   font-family: cursive;
+}
+
+.container .products-container{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+   gap:10rem;
+}
+
+.container .products-container .product{
+   text-align: center;
+   padding:3rem 2rem;
+   background: #222;
+   box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+   outline: .1rem solid rgb(128, 17, 17);
+   outline-offset: -1.5rem;
+   cursor: pointer;
+}
+
+.container .products-container .product:hover{
+   outline: .2rem solid #222;
+   outline-offset: 0;
+}
+
+.container .products-container .product img{
+   height: 25rem;
+}
+
+.container .products-container .product:hover img{
+   transform: scale(.9);
+}
+
+.container .products-container .product h3{
+   padding:.5rem 0;
+   font-size: 2rem;
+   color:#444;
+}
+
+.container .products-container .product:hover h3{
+   color: sandybrown;
+}
+
+.container .products-container .product .price{
+   font-size: 2rem;
+   color:rgba(153, 255, 0, 0.738);
+}.products-preview{
+    position: fixed;
+    top:0; left:0;
+    min-height: 100vh;
+    width: 100%;
+    background: rgba(0,0,0,.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+ }
+ 
+ .products-preview .preview{
+    display: none;
+    padding:2rem;
+    text-align: center;
+    background: #7d1e1e;
+    position: relative;
+    margin:2rem;
+    width: 40rem;
+ }
+ 
+ .products-preview .preview.active{
+    display: inline-block;
+ }
+ 
+ .products-preview .preview img{
+    height: 30rem;
+ }
+ 
+ .products-preview .preview .fa-times{
+    position: absolute;
+    top:1rem; right:1.5rem;
+    cursor: pointer;
+    color:#444;
+    font-size: 4rem;
+ }
+ 
+ .products-preview .preview .fa-times:hover{
+    transform: rotate(90deg);
+ }
+ 
+ .products-preview .preview h3{
+    color:#444;
+    padding:.5rem 0;
+    font-size: 2.5rem;
+ }
+ 
+ .products-preview .preview .stars{
+    padding:1rem 0;
+    font-size: 1.7rem;
+ }
+ 
+ .products-preview .preview .stars i{
+    color:burlywood;
+ }
+ 
+ .products-preview .preview .stars span{
+    color:#999;
+ }
+ 
+ .products-preview .preview p{
+    line-height: 1.5;
+    padding:1rem 0;
+    font-size: 1.6rem;
+    color:#777;
+ }
+ 
+ .products-preview .preview .price{
+    padding:1rem 0;
+    font-size: 2.5rem;
+    color:burlywood;
+ }
+ 
+
+.products-preview .add-to-cart:hover {
+    background-color: #111;
+}
+.cart {
+    position: fixed;
+    height: 600px;
+    background-color: #1c1c1c;
+    border: 1px solid #7d1e1e;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    color: burlywood;
+    right: -400px; 
+    transition: right 0.5s ease;
+   
+}
+.cart h2{
+    font-size: 30px;
+}
+.cart button{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 1.8rem;
+    background-color:rgb(128, 17, 17);
+    color: burlywood;
+    border: none;
+    cursor: pointer;
+    height: 50px;
+    width: 170px;
+    
+}
+.cart #remove-all{
+    position: absolute;
+    left: 0;
+    font-size: 1.8rem;
+    background-color:rgb(128, 17, 17);
+    color: burlywood;
+    border: none;
+    cursor: pointer;
+    height: 50px;
+    width: 170px;
+}
+.cart #remove-all:hover{
+    background: #1c1c1c;
+    border: none;
+ }
+.cart button:hover{
+    background: rgb(7, 117, 7);
+    border: none;
+ }
+ .cart #close-cart{
+    position: relative;
+    right: 0px;
+    top: 420px;
+    font-size: 1.8rem;
+    background-color:rgb(128, 17, 17);
+    color: burlywood;
+    border: none;
+    cursor: pointer;
+    height: 50px;
+    width: 300px;
+ }
+ .cart #close-cart:hover{
+    background: #000000;
+    border: none;
+ }
+
+.cart-items {
+    position: absolute;
+    top: 100px;
+    max-height: 200px;
+    overflow-y: auto;
+    font-size: 15px;
+}
+
+.total-price {
+    position: absolute;
+    bottom: 60px;
+    left: 0;
+    font-weight: bold;
+    font-size: 20px;
+}
+.cart p{
+    font-size: 20px;
+    
+}
+.show-cart{
+    position: fixed;
+    right: 200px;
+    top: 0px;
+}
+.show-cart svg{
+    position: fixed;
+    top: 25px;
+    right: 250px;
+    height: 30px;
+    width: 40px;
+    background-color: burlywood;
+    border-radius: 50%;
+    cursor: pointer;
+    
+}
+.show-cart svg:hover {
+    background-color: #000000;
+    fill: burlywood;
+}
+.head-cart{
+    height: 50px; 
+    padding: 10px; 
+}
+body.menu-body .cart{
+    top: 0px;
+    right: 20px;
+}
+.show-cart a{
+    position: fixed;
+    left: 30px;
+    text-decoration: none;
+    font-family: 'Poppins',sans-serif;
+    color: burlywood;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    top: 40px;
+}
+.show-cart a:after{
+    content: "";
+    position: absolute;
+    background-color: #7d1e1e;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
+}
+.show-cart a:hover{
+    color: burlywood;
+    font-weight: 500;
+}
+.show-cart a:hover:after{
+    width: 100%;
+}

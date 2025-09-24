@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+     
+        <link rel="stylesheet" href="Form.css">
+     
+        <script src="script.js" defer></script>
+     
+     </head>
+
+     <body class="menu-body">
+      <div class="show-cart">
+         <input type="text" id="searchBar" placeholder="Search Products..." onkeyup="filterProducts()">
+         <a href="Homepage.html">Home</a>
+         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 4H2v2h2.3l3.521 9.683A2.004 2.004 0 0 0 9.7 17H18v-2H9.7l-.728-2H18c.4 0 .762-.238.919-.606l3-7A.998.998 0 0 0 21 4z"></path><circle cx="10.5" cy="19.5" r="1.5"></circle><circle cx="16.5" cy="19.5" r="1.5"></circle></svg>
+         
+      </div>
+      
+      
+     <div class="container">
+
+        <h3 class="title"> menu </h3>
+     
+        <div class="products-container">
+     
+           <div class="product" data-name="Golden Lotus" data-price="450.00">
+              <img src="Golden Lotus.png" alt="">
+              <h3>Golden Lotus</h3>
+              <div class="price">₱450.00</div>
+           </div>
+     
+           <div class="product" data-name="Itlogen" data-price="400.00">
+              <img src="Itlogen.png" alt="">
+              <h3>Itlogen</h3>
+              <div class="price">₱400.00</div>
+           </div>
+     
+           <div class="product" data-name="Kilawensu" data-price="150.00">
+              <img src="kilawensu.png" alt="">
+              <h3>Kilawensu</h3>
+              <div class="price">₱150.00</div>
+           </div>
+     
+           <div class="product" data-name="Ramish" data-price="165.00">
+              <img src="Ramish.png" alt="">
+              <h3>Ramish</h3>
+              <div class="price">₱165.00</div>
+           </div>
+     
+           <div class="product" data-name="The Rolling Stones" data-price="299.00">
+              <img src="The Rolling Stone.png" alt="">
+              <h3>The Rolling Stones</h3>
+              <div class="price">₱299.00</div>
+           </div>
+     
+           <div class="product" data-name="Dragon Juice" data-price="49.00">
+              <img src="Dragon Juice.png" alt="">
+              <h3>Dragon Juice</h3>
+              <div class="price">₱49.00</div>
+           </div>
+     
+        </div>
+     
+     </div>
+
+
+     <div class="cart">
+      <h2>Shopping Cart</h2>
+      <div class="cart-items"></div>
+      <p>Total: ₱<span id="total">0.00</span></p>
+      <button id="close-cart">Close</button>
+      <button id="remove-all">Remove All</button>
+      <button id="checkout">Checkout</button>
+   </div>
+
+     
+     <div class="products-preview">
+     
+        <div class="preview" data-target="Golden Lotus">
+           <i class="fas fa-times"></i>
+           <img src="" alt="">
+           <h3>Golden Lotus</h3>
+           <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>( 250 )</span>
+           </div>
+           <p>Successfully added to cart.</p>
+           <div class="price">₱450.00</div>
+           <div class="buttons">
+           </div>
+        </div>
+     
+        <div class="preview" data-target="Itlogen">
+           <i class="fas fa-times"></i>
+           <img src="images/2.png" alt="">
+           <h3>Itlogen</h3>
+           <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>( 250 )</span>
+           </div>
+           <p>Successfully added to cart.</p>
+           <div class="price">₱400.00</div>
+           <div class="buttons"></div>
+        </div>
+        
+     
+        <div class="preview" data-target="Kilawensu">
+           <i class="fas fa-times"></i>
+           <img src="images/3.png" alt="">
+           <h3>Kilawensu</h3>
+           <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>( 250 )</span>
+           </div>
+           <p>Successfully added to cart.</p>
+           <div class="price">₱150.00</div>
+           <div class="buttons"></div>
+        </div>
+     
+        <div class="preview" data-target="Ramish">
+           <i class="fas fa-times"></i>
+           <img src="images/4.png" alt="">
+           <h3>Ramish</h3>
+           <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>( 250 )</span>
+           </div>
+           <p>Successfully added to cart.</p>
+           <div class="price">₱165.00</div>
+           <div class="buttons"></div>
+        </div>
+     
+        <div class="preview" data-target="The Rolling Stones">
+           <i class="fas fa-times"></i>
+           <img src="images/5.png" alt="">
+           <h3>The Rolling Stones</h3>
+           <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>( 250 )</span>
+           </div>
+           <p>Successfully added to cart.</p>
+           <div class="price">₱299.00</div>
+           <div class="buttons"></div>
+        </div>
+     
+        <div class="preview" data-target="Dragon Juice">
+           <i class="fas fa-times"></i>
+           <img src="images/6.png" alt="">
+           <h3>Dragon Juice</h3>
+           <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>( 250 )</span>
+           </div>
+           <p>Successfully added to cart.</p>
+           <div class="price">₱49.00</div>
+           <div class="buttons"></div>
+        </div>
+     </div>
+   </body> 
+     </body>
+     </html>
