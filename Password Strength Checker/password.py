@@ -26,3 +26,4 @@ def calculate_entropy(password):
 
 pwd = "1aA,a"
 print(f"Entropy: {calculate_entropy(pwd):.2f} bits")
+print('idk wats next')
