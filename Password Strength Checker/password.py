@@ -24,6 +24,7 @@ def calculate_entropy(password):
     entropy = len(password) * math.log2(pool_size)
     return entropy
 
-pwd = "1aA,a"
-print(f"Entropy: {calculate_entropy(pwd):.2f} bits")
+
+password = input("Enter password: ")
+print(f"Entropy: {calculate_entropy(password):.2f} bits")
 print('idk wats next')
