@@ -1,4 +1,4 @@
-import math, string
+import math, string, hashlib
 
 def calculate_entropy(password):
     if not password:
@@ -27,4 +27,11 @@ def calculate_entropy(password):
 
 password = input("Enter password: ")
 print(f"Entropy: {calculate_entropy(password):.2f} bits")
-print('idk wats next')
+
+result = hashlib.sha1(password.encode()).hexdigest()
+
+k_ano = result[:5]
+result = result[5:]
+
+print(k_ano)
+print(result)
