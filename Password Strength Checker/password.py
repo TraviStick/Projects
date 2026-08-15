@@ -1,6 +1,6 @@
-import math, string, hashlib
+import math, string, hashlib, requests
 
-def calculate_entropy(password):
+def password_strength_checker(password):
     if not password:
         return 0
 
@@ -24,14 +24,24 @@ def calculate_entropy(password):
     entropy = len(password) * math.log2(pool_size)
     return entropy
 
+def password_security_checker(password):
+    result = hashlib.sha1(password.encode('utf-8')).hexdigest().upper()
+    prefix = result[:5]
+    suffix = result[5:]
+
+    url = f"https://api.pwnedpasswords.com/range/{prefix}"
+    response = requests.get(url)
+
+    if  response.status_code != 200:
+        raise RuntimeError(f"Error fetching data: {response.status_code}")
+
+    for line in response.text.splitlines():
+        target_suffix, count = line.split(":")
+        if target_suffix == suffix:
+            return int(count)
+    return 0
 
 password = input("Enter password: ")
-print(f"Entropy: {calculate_entropy(password):.2f} bits")
+print(f"Entropy: {password_strength_checker(password):.2f} bits")
+print(f"The password appeared \"{password_security_checker(password)}\" times")
 
-result = hashlib.sha1(password.encode()).hexdigest()
-
-k_ano = result[:5]
-result = result[5:]
-
-print(k_ano)
-print(result)
