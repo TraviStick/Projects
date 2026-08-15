@@ -15,10 +15,10 @@ def password_strength_checker(password):
     if any(c in string.punctuation for c in password):
         pool_size += 32
 
-    # If the password has custom/other characters
+    # Fallback if password uses spaces or characters outside the standard pools
     unique_chars = len(set(password))
-    if unique_chars > pool_size:
-        pool_size = unique_chars
+    if unique_chars > pool_size or pool_size == 0:
+        pool_size = max(unique_chars, 1)  # Ensures pool_size is never 0
 
     # Calculate entropy
     entropy = len(password) * math.log2(pool_size)
@@ -42,6 +42,18 @@ def password_security_checker(password):
     return 0
 
 password = input("Enter password: ")
-print(f"Entropy: {password_strength_checker(password):.2f} bits")
-print(f"The password appeared \"{password_security_checker(password)}\" times")
+entropy = password_strength_checker(password)
+leaks = password_security_checker(password)
+
+print(f"Entropy: {entropy:.2f} bits")
+if entropy < 35:
+    print("Strength: Very Weak")
+elif entropy < 60:
+    print("Strength: Weak")
+elif entropy < 80:
+    print("Strength: Strong")
+else:
+    print("Strength: Very Strong")
+
+print(f"Pwned Status: Found in {leaks:,} data breaches.")
 
