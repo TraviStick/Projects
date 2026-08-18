@@ -30,7 +30,20 @@ def password_security_checker(password):
     suffix = result[5:]
 
     url = f"https://api.pwnedpasswords.com/range/{prefix}"
-    response = requests.get(url)
+    try:
+        # Adding a timeout to keep from hanging indefinitely 
+        response = requests.get(url,timeout=5)
+        # Raises HTTPError if the response status code is 4xx or 5xx
+        response.raise_for_status()
+        # Process valid response data
+        data = response.json()
+        print("Success:", data)
+
+    except requests.exceptions.RequestException as e:
+        # Catches ConnectionError, Timeout, HTTPError, etc.
+        print(f"An error occurred while handling your request: {e}")
+
+
 
     if  response.status_code != 200:
         raise RuntimeError(f"Error fetching data: {response.status_code}")
