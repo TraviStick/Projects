@@ -46,13 +46,14 @@ entropy = password_strength_checker(password)
 leaks = password_security_checker(password)
 
 print(f"Entropy: {entropy:.2f} bits")
+# I got this password strength from NordVPN
 if entropy < 35:
     print("Strength: Very Weak")
-elif entropy < 60:
+elif 36 < entropy < 59:
     print("Strength: Weak")
-elif entropy < 80:
+elif 60 < entropy < 119:
     print("Strength: Strong")
-else:
+elif 120 < entropy:
     print("Strength: Very Strong")
 
 print(f"Pwned Status: Found in {leaks:,} data breaches.")
