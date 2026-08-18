@@ -14,11 +14,10 @@ def password_strength_checker(password):
         pool_size += 10
     if any(c in string.punctuation for c in password):
         pool_size += 32
+    if " " in password:
+        pool_size += 1
 
-    # Fallback if password uses spaces or characters outside the standard pools
-    unique_chars = len(set(password))
-    if unique_chars > pool_size or pool_size == 0:
-        pool_size = max(unique_chars, 1)  # Ensures pool_size is never 0
+    
 
     # Calculate entropy
     entropy = len(password) * math.log2(pool_size)
@@ -56,6 +55,9 @@ def password_security_checker(password):
 
 password = input("Enter password: ")
 entropy = password_strength_checker(password)
+if __name__ == "__main__":
+    password = input("Enter password: ")
+    entropy = password_strength_checker(password)
 leaks = password_security_checker(password)
 
 print(f"Entropy: {entropy:.2f} bits")
