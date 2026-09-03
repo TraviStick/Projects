@@ -16,7 +16,7 @@ def password_strength_checker(password):
         pool_size += 32
     
 
-    # Fallback if password uses spaces or characters outside the standard pools
+    # Fallback if password uses spaces or characters outside the standard pools like emoji
     unique_chars = len(set(password))
     if unique_chars > pool_size or pool_size == 0:
         pool_size = max(unique_chars, 1)  # Ensures pool_size is never 0
@@ -55,23 +55,20 @@ def password_security_checker(password):
             return int(count)
     return 0
 
-password = input("Enter password: ")
-entropy = password_strength_checker(password)
+
 if __name__ == "__main__":
     password = input("Enter password: ")
     entropy = password_strength_checker(password)
-leaks = password_security_checker(password)
+    leaks = password_security_checker(password)
 
-print(f"Entropy: {entropy:.2f} bits")
-# I got this password strength from NordVPN
-if entropy < 35:
-    print("Strength: Very Weak")
-elif 36 < entropy < 59:
-    print("Strength: Weak")
-elif 60 < entropy < 119:
-    print("Strength: Strong")
-elif 120 < entropy:
-    print("Strength: Very Strong")
-
-print(f"Pwned Status: Found in {leaks:,} data breaches.")
-
+    print(f"Entropy: {entropy:.2f} bits")
+    # I got this password strength from NordVPN
+    if entropy <= 35:
+        print("Strength: Very Weak")
+    elif 36 <= entropy <= 59:
+        print("Strength: Weak")
+    elif 60 <= entropy <= 119:
+        print("Strength: Strong")
+    elif 120 <= entropy:
+        print("Strength: Very Strong")
+    print(f"Pwned Status: Found in {leaks:,} data breaches.")
