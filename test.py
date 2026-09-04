@@ -1,3 +1,4 @@
-he = input('Enter: ')
-print(he.encode('utf-8'))
-print(he.encode('utf-16'))
+import sys
+import subprocess
+
+subprocess.check_call([sys.executable, "-m", "pip", "install", "emoji"])

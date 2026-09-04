@@ -1,4 +1,23 @@
-import math, string, hashlib, requests
+import math, string, hashlib, requests, sys
+def validatePassword(password):
+    if " " in password:
+        raise ValueError("Spaces are not allowed in the password.")
+
+    # (This ensures database strings remain safe while allowing é, symbols, and emojis)
+    for char in password:
+        category = sys.intern(chr(ord(char))) # Check unicode type
+        
+        # 'Cc' means Control character (like backspace, null bytes, escape keys)
+        # 'Cf' means Format character (invisible directional/hidden marks)
+        import unicodedata
+        char_type = unicodedata.category(char)
+        
+        if char_type in ('Cc', 'Cf'):
+            raise ValueError("Password contains invalid system control characters.")
+
+    return True
+
+
 
 def password_strength_checker(password):
     if not password:
@@ -14,12 +33,11 @@ def password_strength_checker(password):
         pool_size += 10
     if any(c in string.punctuation for c in password):
         pool_size += 32
-    
-
-    # Fallback if password uses spaces or characters outside the standard pools like emoji
-    unique_chars = len(set(password))
-    if unique_chars > pool_size or pool_size == 0:
-        pool_size = max(unique_chars, 1)  # Ensures pool_size is never 0
+    if validatePassword(password):
+        if any(ord(c) >= 128 for c in password):
+            pool_size += 128
+        else:
+            pool_size += 0
 
     # Calculate entropy
     entropy = len(password) * math.log2(pool_size)
@@ -41,7 +59,7 @@ def password_security_checker(password):
             target_suffix, count = line.split(":")
             if target_suffix == suffix:
                 return int(count)
-    except requests.exceptions.RequestException as e:
+    except requests.exceptions.RequestException  as e:
         # Catches ConnectionError, Timeout, HTTPError, etc.
         print(f"An error occurred while handling your request: {e}")
     return 0
@@ -49,6 +67,11 @@ def password_security_checker(password):
 
 if __name__ == "__main__":
     password = input("Enter password: ")
+    try:
+        validatePassword(password)
+    except ValueError as error:
+        print(error)
+        sys.exit()
     entropy = password_strength_checker(password)
     leaks = password_security_checker(password)
 
