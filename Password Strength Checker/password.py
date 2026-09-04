@@ -26,25 +26,22 @@ def password_strength_checker(password):
     return entropy
 
 def password_security_checker(password):
-    result = hashlib.sha1(password.encode('utf-8')).hexdigest().upper()
-    prefix = result[:5]
-    suffix = result[5:]
-    url = f"https://api.pwnedpasswords.com/range/{prefix}"
- 
-    # Adding a timeout to keep from hanging indefinitely 
-    response = requests.get(url,timeout=5)
-    # Raises HTTPError if the response status code is 4xx or 5xx
-    response.raise_for_status()
-
     try:
-        if  response.status_code != 200:
-            raise RuntimeError(f"Error fetching data: {response.status_code}")
+        result = hashlib.sha1(password.encode('utf-8')).hexdigest().upper()
+        prefix = result[:5]
+        suffix = result[5:]
+        url = f"https://api.pwnedpasswords.com/range/{prefix}"
+ 
+        # Adding a timeout to keep from hanging indefinitely 
+        response = requests.get(url,timeout=5)
+        # Raises HTTPError if the response status code is 4xx or 5xx
+        response.raise_for_status()
 
         for line in response.text.splitlines():
             target_suffix, count = line.split(":")
             if target_suffix == suffix:
                 return int(count)
-    except UnboundLocalError as e:
+    except requests.exceptions.RequestException as e:
         # Catches ConnectionError, Timeout, HTTPError, etc.
         print(f"An error occurred while handling your request: {e}")
     return 0
@@ -57,14 +54,14 @@ if __name__ == "__main__":
 
     print(f"Entropy: {entropy:.2f} bits")
     # I got this password strength from NordVPN
-    entropy = 34
-    if entropy <= 35:
+    roundedEntropy = round(entropy)
+    if roundedEntropy <= 35:
         print("Strength: Very Weak")
-    elif 36 <= entropy <= 59:
+    elif 36 <= roundedEntropy <= 59:
         print("Strength: Weak")
-    elif 60 <= entropy <= 119:
+    elif 60 <= roundedEntropy <= 119:
         print("Strength: Strong")
-    elif 120 <= entropy:
+    elif 120 <= roundedEntropy:
         print("Strength: Very Strong")
     print(f"Pwned Status: Found in {leaks:,} data breaches.")
 

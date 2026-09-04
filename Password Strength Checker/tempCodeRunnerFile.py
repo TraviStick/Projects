@@ -1,9 +1,9 @@
-entropy = 120
-if entropy <= 35:
+entropy = 35.4
+if entropy <= 35.4:
     print("Strength: Very Weak")
-elif 36 <= entropy <= 59:
+elif 35.5 <= entropy <= 59.4:
     print("Strength: Weak")
-elif 60 <= entropy <= 119:
+elif 59.5 <= entropy <= 120.4:
     print("Strength: Strong")
-elif 120 <= entropy:
+elif 120.5 <= entropy:
     print("Strength: Very Strong")
