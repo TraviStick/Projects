@@ -19,11 +19,6 @@ def validatePassword(password):
 def password_strength_checker(password):
     if not password:
         return 0
-    try:
-        validatePassword(password)
-    except ValueError as error:
-        print(error)
-        sys.exit()
     # Determine character pool size
     pool_size = 0
     if " " in password:
@@ -41,8 +36,11 @@ def password_strength_checker(password):
     else:
         pool_size += 0
 
-    # Calculate entropy
-    entropy = len(password) * math.log2(pool_size)
+    # Calculate entropy 
+    if pool_size <= 0:
+        raise ValueError ("Entropy is Undefined.")
+    else:
+        entropy = len(password) * math.log2(pool_size)
     return entropy
 
 def password_security_checker(password):
@@ -66,5 +64,24 @@ def password_security_checker(password):
         print(f"An error occurred while handling your request: {e}")
     return 0
 
-password = "\t"
-password_strength_checker(password)
+if __name__ == "__main__":
+    password = input("Enter password: ")
+    try:
+        validatePassword(password)
+        entropy = password_strength_checker(password)
+    except ValueError as e:
+        print(e)
+        sys.exit()
+    leaks = password_security_checker(password)
+    print(f"Entropy: {entropy:.2f} bits")
+    # I got this password strength from NordVPN
+    roundedEntropy = round(entropy)
+    if roundedEntropy <= 35:
+        print("Strength: Very Weak")
+    elif 36 <= roundedEntropy <= 59:
+        print("Strength: Weak")
+    elif 60 <= roundedEntropy <= 119:
+        print("Strength: Strong")
+    elif 120 <= roundedEntropy:
+        print("Strength: Very Strong")
+    print(f"Pwned Status: Found in {leaks:,} data breaches.")

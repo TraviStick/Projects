@@ -1,2 +1,2 @@
 
-        print("Strength: Strong")
+    except requests.exceptions.RequestException  as e:
