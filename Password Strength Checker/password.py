@@ -1,12 +1,9 @@
 import math, string, hashlib, requests, sys
 def validatePassword(password):
-    if " " in password:
-        raise ValueError("Spaces are not allowed in the password.")
+    
 
     # (This ensures database strings remain safe while allowing é, symbols, and emojis)
     for char in password:
-        category = sys.intern(chr(ord(char))) # Check unicode type
-        
         # 'Cc' means Control character (like backspace, null bytes, escape keys)
         # 'Cf' means Format character (invisible directional/hidden marks)
         import unicodedata
@@ -25,6 +22,8 @@ def password_strength_checker(password):
 
     # Determine character pool size
     pool_size = 0
+    if " " in password:
+            pool_size += 1
     if any(c in string.ascii_lowercase for c in password):
         pool_size += 26
     if any(c in string.ascii_uppercase for c in password):
@@ -33,11 +32,10 @@ def password_strength_checker(password):
         pool_size += 10
     if any(c in string.punctuation for c in password):
         pool_size += 32
-    if validatePassword(password):
-        if any(ord(c) >= 128 for c in password):
-            pool_size += 128
-        else:
-            pool_size += 0
+    if any(ord(c) >= 128 for c in password):
+        pool_size += 128
+    else:
+        pool_size += 0
 
     # Calculate entropy
     entropy = len(password) * math.log2(pool_size)
@@ -87,4 +85,5 @@ if __name__ == "__main__":
     elif 120 <= roundedEntropy:
         print("Strength: Very Strong")
     print(f"Pwned Status: Found in {leaks:,} data breaches.")
+
 
