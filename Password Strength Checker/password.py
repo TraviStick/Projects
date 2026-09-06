@@ -66,9 +66,6 @@ def password_security_checker(password):
         print(f"An error occurred while handling your request: {e}")
     return 0
 
-password = "\t"
-password_strength_checker(password)
-
 if __name__ == "__main__":
     password = input("Enter password: ")
     entropy = password_strength_checker(password)
